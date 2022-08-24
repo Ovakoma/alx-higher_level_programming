@@ -5,7 +5,7 @@ while last > 96:
     if (last % 2 != 0):
         last -= 32
         check = 1
-    print(f"{chr(last)}", end="")
+    print("{:s}".format(chr(last)), end="")
     if (check):
         last += 32
     last -= 1

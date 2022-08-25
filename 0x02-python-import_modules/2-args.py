@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from sys import argv
-def main():
+
+def main(argv):
     n_arg = len(argv) - 1
     if (n_arg < 1):
         print("{} arguments.".format(n_arg))
@@ -13,4 +13,5 @@ def main():
             print('{}: {}'.format(i, argv[i]))
 
 if __name__ == "__main__":
-    main()
+    import sys
+    main(sys.argv)

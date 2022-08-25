@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-from sys import argv
-def main():
+def main(argv):
     added = 0
     for i in range(1, len(argv)):
         added += int(argv[i])
     print('{}'.format(added))
 
 if __name__ == "__main__":
-    main()
+    import sys
+    main(sys.argv)

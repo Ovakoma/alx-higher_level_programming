@@ -3,8 +3,6 @@ import sys
 def safe_function(fct, *args):
     try:
         fct(*args)
-    except Exception as err:
-        print("Exception: {}".format(err), file=sys.stderr)
+    except (ZeroDivisionError, ValueError, TypeError, IndexError) as error:
+        print("Exception: {}".format(error), file=sys.stderr)
         return None
-    else:
-        return fct(*args)

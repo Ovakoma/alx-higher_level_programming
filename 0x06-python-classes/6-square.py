@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+
 class Square:
     """defines square based on previous functions"""
-    def __init__(self, size):
+    def __init__(self, size=0, position=(0, 0)):
         """Initialize a new square.
         Args:
             size (int): The size of the new square.

@@ -1,0 +1,48 @@
+#0-add_integer.txt
+
+=================================
+USING 0-add_integer.py FUNCTION
+=================================
+
+Usage
+=====
+
+``add_integer(...)``returns the addition of its two arguments.
+
+::
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integers(2, 4)
+	6
+::
+	>>> add_integer(-1, -3)
+	-4
+
+Note: b has a default value of 98
+::
+Floating point number
+
+	>>> add_integer(9.34, 2.72)
+	12.06
+::
+	>>> add_integer(2.0, -1.4)
+	0.6
+::
+The function does not work for string arguments
+
+	>>> add_integer('free', 'dom')
+	Traceback (most recent call last):
+	TypeError: a must be an interger
+::
+	>>> add_integer('bye', 4)
+	Traceback (most recent call last):
+        TypeError: a must be an interger
+::
+	>>> add_integer(3, 'bye')
+        Traceback (most recent call last):
+        TypeError: b must be an interger
+
+The function deos not work for boolean argument
+::
+	>>> add_integer(True, 4)
+        Traceback (most recent call last):
+        TypeError: a must be an interger

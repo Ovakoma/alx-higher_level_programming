@@ -7,6 +7,7 @@ class Rectangle:
         '''instance to initialize attributes.
         Args:
             width: private instance attribute.
+            height: private instance attribute.
         '''
         self.__width = width
         self.__height = height
@@ -26,8 +27,8 @@ class Rectangle:
         self.__width = value
 
     @property
-    """Retrieves the value of height."""
     def height(self):
+        """Retrieves the value of height."""
         return self.__height
 
     @height.setter

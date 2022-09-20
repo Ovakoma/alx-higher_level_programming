@@ -6,14 +6,15 @@ def text_indentation(text):
     Args:
         text(str): the string passed.
     """
-    char = ['.', '?', ':']
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for c in char:
-        if c in text:
-            split_text = text.split(c)
-            text = str()
-            for i in range(len(split_text) - 1):
-                text += f"{split_text[i].strip()}\n\n"
-            text += f"{split_text[i + 1].strip()}"
-        print(text)
+
+    i, j = 0, 0
+    for a, c in enumerate(text):
+        if c in ('.', ':', '?'):
+            print(text[i:j+1], end="\n\n")
+            i = j + 2
+        else:
+            if j == len(text) - 1:
+                print(text[i:], end="")
+        j += 1

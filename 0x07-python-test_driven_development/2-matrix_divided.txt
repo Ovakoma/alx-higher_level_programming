@@ -1,0 +1,69 @@
+#2-matrix-divided.py
+
+=========================================
+FUNCTION DIVIDES ALL ELEMENTS OF A MATRIX
+=========================================
+
+Usage
+=====
+funtion receives a matrix and a divisor as arguments
+function returns new matrix
+
+::
+	>>> matrix = [[2, 4], [6, 8]]
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+::
+	>>> matrix_divided(matrix, 2)
+	[[1, 2], [3, 4]]
+
+Raises TypeError if the matrix is not a list of lists of integers or floats
+
+::
+	>>> matrix_divided([['2', 4, 3], [6, '8', 5]], 3) #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+TypeError is raised if matrix is empty
+
+::
+	>>> matrix_divided([], 4) #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Raises TypeError if row of matrix is not of the same size
+
+::
+	>>> matrix_divided([2, 4, 6],[8, 10], 2) #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+
+Raises TypeError if ``div`` is not an integer or float
+
+::
+	>>> matrix_divided(matrix, '6')
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+Raises ZeroDivisionError if ``div`` is zero
+
+::
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+if ``div`` is infinity, function returns zero matrix
+
+::
+	>>> matrix_divided(matrix, float("inf"))
+	[[0.0, 0.0], [0.0, 0.0]]
+
+If div = float('nan') - NaN - the result will be a matrix of NaN
+
+::
+	>>> matrix_divided(matrix, float('nan'))
+	[[nan, nan], [nan, nan]]
+

@@ -40,9 +40,47 @@ The function does not work for string arguments
 	>>> add_integer(3, 'bye')
         Traceback (most recent call last):
         TypeError: b must be an interger
+::
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+::
+	>>> add_integer(None, 3)
+	Traceback (most recent call last):
+	TypeError: b must be an integer
 
 The function deos not work for boolean argument
 ::
 	>>> add_integer(True, 4)
         Traceback (most recent call last):
         TypeError: a must be an interger
+
+The function will fail if infinity is provided.
+
+::
+
+	>>> add_integer(float('inf')) #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
+
+::
+
+	>>> add_integer(2, float('inf')) #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	  ...
+	OverflowError: cannot convert float infinity to integer
+
+And again with NaN numbers.
+
+::
+
+	>>> add_integer(float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
+::
+
+	>>> add_integer(2, float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer

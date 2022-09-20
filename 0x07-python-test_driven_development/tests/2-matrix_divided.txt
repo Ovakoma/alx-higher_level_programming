@@ -15,12 +15,12 @@ function returns new matrix
 
 ::
 	>>> matrix_divided(matrix, 2)
-	[[1, 2], [3, 4]]
+	[[1.0, 2.0], [3.0, 4.0]]
 
 Raises TypeError if the matrix is not a list of lists of integers or floats
 
 ::
-	>>> matrix_divided([['2', 4, 3], [6, '8', 5]], 3) #doctest: +ELLIPSIS
+	>>> matrix_divided([[1, '2'], [3, 2], ['3', 2]], 3) #doctest: +ELLIPSIS
 	Traceback (most recent call last):
 	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
@@ -36,7 +36,7 @@ TypeError is raised if matrix is empty
 Raises TypeError if row of matrix is not of the same size
 
 ::
-	>>> matrix_divided([2, 4, 6],[8, 10], 2) #doctest: +ELLIPSIS
+	>>> matrix_divided([[2, 4, 6],[8, 10]], 2) #doctest: +ELLIPSIS
 	Traceback (most recent call last):
 	...
 	TypeError: Each row of the matrix must have the same size

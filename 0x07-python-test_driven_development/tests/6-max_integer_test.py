@@ -9,11 +9,6 @@ class MaxIntTestCase(unittest.TestCase):
         """tests if lists is empty."""
         self.assertEqual(max_integer([]), None)
 
-    def test_list_of_integers(self):
-        """tests for list of integers"""
-        i = [1, 2, 4]
-        self.assertTrue(max_integer([i]))
-
     def test_single_list_element(self):
         """tests if list comprises of single element"""
         s = [2]
@@ -31,8 +26,8 @@ class MaxIntTestCase(unittest.TestCase):
 
     def test_int_float(self):
         """checks for max value in list of integers and floats"""
-        if = [4, 2.34, 40]
-        self.assertEqual(max_integer([if]), 40)
+        i_f = [4, 2.34, 40]
+        self.assertEqual(max_integer([i_f]), 40)
 
     def test_large_list(self):
         """Tests a list that is large"""

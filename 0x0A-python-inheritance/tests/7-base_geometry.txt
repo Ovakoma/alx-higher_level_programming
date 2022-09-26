@@ -1,0 +1,55 @@
+#7-base_geometry.txt
+
+>>> from importlib import import_module
+>>> BaseGeometry = import_module('7-base_geometry').BaseGeometry
+
+>>> class TestInt(int):
+...	pass
+>>> b = BaseGeometry()
+>>> type(b)
+<class '7-base_geometry.BaseGeometry'>
+>>> b.__class__.__name__
+'BaseGeometry'
+>>> 'integer_validator' in dir(b)
+True
+>>> 'area' in dir(b)
+True
+>>> type(b.integer_validator)
+<class 'method'>
+>>> b.integer_validator('foo', 2)
+>>> b.integer_validator('foo', int('56'))
+>>> b.integer_validator('foo', int('good', 18))
+>>> b.integer_validator(b'foo', 12)
+>>> b.integer_validator(0x666f6f, 278)
+>>> b.integer_validator([0x666f6f], 278)
+
+>>> try:
+...	b = BaseGeometry()
+...	b.area()
+... except Exception as e:
+...	print('[{}] {}',format(e.__class__.__name__, e.args[0]))
+[Exception] area() is not implemented
+>>> try:
+...	b = BaseGeometry()
+...	b.area(2)
+... except Exception as e:
+...	print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
+[TypeError] area() takes 1 positional argument but 2 were given
+>>> try:
+...	b = BaseGeometry()
+...	b.area(None)
+... except Exception as e:
+...	print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
+[TypeError] area() takes 1 positional argument but 2 were given
+>>> try:
+...	b = BaseGeometry()
+...     b.area('size', None)
+... except Exception as e:
+...     print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
+[TypeError] size must be an integer
+>>> try:
+...	b = BaseGeometry()
+...     b.area('foo', True)
+... except Exception as e:
+...     print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
+[TypeError] foo must be an integer

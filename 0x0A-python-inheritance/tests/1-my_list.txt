@@ -1,0 +1,69 @@
+#1-my_list.txt
+
+================================
+HOW TO USE 1-my_list.py FUNCTION
+================================
+This documentation serves as a guide to using the 1-my_list.py function
+
+Usage
+=====
+The function prints the list passed as an argument to the function, but in sorted(ascending order)
+
+::
+	
+	>>> MyList = import_module('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> type(my_list)
+	<class '1-my_list.MyList'>
+
+::
+
+	>>> isinstance(Mylist, list)
+	False
+
+::
+
+	>>> issubclass(MyList, list)
+	True
+
+::
+
+	>>> my_list = MyList()
+	>>> my_list.print_sorted()
+	[]
+
+::
+
+	>>> my_list = MyList([2])
+	>>> my_list.print_sorted()
+	[2]
+
+::
+
+	>>> my_list = MyList([1, 4, 3, 5])
+	>>> my_list.print_sorted()
+	[1, 3, 4, 5]
+
+::
+
+	>>> my_list = MyList([-2, 65, 1, 9, 4])
+	>>> my_list.print_sorted()
+	[-2, 1, 4, 9, 65]
+
+::
+
+	>>> try:
+	...	lst = MyList(3, 4)
+	... except Exception as e:
+	...	print('[{}] {}'.format(e.type(self).__name__, e.args[0]))
+	[TypeError] list expected at most 1 argument, got 2
+	>>> try:
+	...	l = MyList()
+	...	l.append(9)
+	...	l.append(None)
+	...	l.print_sort()
+	... except Exception as e:
+	...	print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
+	[TypeError] '<' not supported between instances of 'NoneType' and 'int'
+
+	...

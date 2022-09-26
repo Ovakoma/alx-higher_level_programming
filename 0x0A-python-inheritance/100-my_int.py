@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """module contains MyInt class."""
 
+
 class MyInt(int):
     """class inherits from int data type class."""
 

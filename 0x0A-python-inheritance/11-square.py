@@ -2,6 +2,7 @@
 """module defines class and subclass."""
 Rectangle = __import__('9-rectangle.py').Rectangle
 
+
 class Square(Rectangle):
     """class inherits from Rectangle class."""
 
@@ -21,4 +22,4 @@ class Square(Rectangle):
     def __str__(self):
         """returns square description."""
         return ("[{}] {}/{}".format(type(self).__name__,
-            self.__size, self.__size))
+                self.__size, self.__size))

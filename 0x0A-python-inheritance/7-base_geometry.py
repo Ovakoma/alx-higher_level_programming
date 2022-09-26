@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """module contains the BaseGeometry class."""
 
-class BaseGeometrty:
+
+class BaseGeometry:
     """Base class of geometry objects."""
 
     def area(self):

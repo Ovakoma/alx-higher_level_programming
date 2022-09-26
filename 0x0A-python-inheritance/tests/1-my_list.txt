@@ -10,7 +10,7 @@ Usage
 The function prints the list passed as an argument to the function, but in sorted(ascending order)
 
 ::
-	
+	>>> from importlib import import_module
 	>>> MyList = import_module('1-my_list').MyList
 	>>> my_list = MyList()
 	>>> type(my_list)
@@ -18,7 +18,7 @@ The function prints the list passed as an argument to the function, but in sorte
 
 ::
 
-	>>> isinstance(Mylist, list)
+	>>> isinstance(MyList, list)
 	False
 
 ::
@@ -55,13 +55,13 @@ The function prints the list passed as an argument to the function, but in sorte
 	>>> try:
 	...	lst = MyList(3, 4)
 	... except Exception as e:
-	...	print('[{}] {}'.format(e.type(self).__name__, e.args[0]))
+	...	print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
 	[TypeError] list expected at most 1 argument, got 2
 	>>> try:
 	...	l = MyList()
 	...	l.append(9)
 	...	l.append(None)
-	...	l.print_sort()
+	...	l.print_sorted()
 	... except Exception as e:
 	...	print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
 	[TypeError] '<' not supported between instances of 'NoneType' and 'int'

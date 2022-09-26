@@ -2,6 +2,7 @@
 """module defines class and subclass."""
 Rectangle = __import__('9-rectangle.py').Rectangle
 
+
 class Square(Rectangle):
     """class inherits from Rectangle class."""
 

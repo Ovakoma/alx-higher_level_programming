@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """module instantiates area(...) function."""
 
+
 class BaseGeometry:
     """class contains public instance method."""
     def area(self):

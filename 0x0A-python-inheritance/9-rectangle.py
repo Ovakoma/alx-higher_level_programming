@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """module contains class and subclass."""
-
 BaseGeometry = __import__('7-base_geometry.py').BaseGeometry
+
 
 class Rectangle(BaseGeometry):
     """class inherits from BaseGeometry class."""
@@ -20,9 +20,9 @@ class Rectangle(BaseGeometry):
 
         def area(self):
             """implements area function."""
-            return self.__width  * self.__height
+            return self.__width * self.__height
 
         def __str__(self):
             """returns rectangle description of object."""
             return ("[{}] {:d}/{:d}".format(type(self).__name__,
-                self.__width, self.__height)
+                    self.__width, self.__height))

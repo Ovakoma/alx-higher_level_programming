@@ -30,24 +30,24 @@ True
 ...	b.area(2)
 ... except Exception as e:
 ...	print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
-[TypeError] BaseGeometry.area() takes 1 positional argument but 2 were given
+[TypeError] area() takes 1 positional argument but 2 were given
 >>> try:
 ...	b = BaseGeometry()
 ...	b.area(None)
 ... except Exception as e:
 ...	print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
-[TypeError] BaseGeometry.area() takes 1 positional argument but 2 were given
+[TypeError] area() takes 1 positional argument but 2 were given
 >>> try:
 ...	b = BaseGeometry()
 ...     b.area('size', None)
 ... except Exception as e:
 ...     print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
-[TypeError] BaseGeometry.area() takes 1 positional argument but 3 were given
+[TypeError] area() takes 1 positional argument but 3 were given
 >>> try:
 ...	b = BaseGeometry()
 ...     b.area('foo', True)
 ... except Exception as e:
 ...     print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
-[TypeError] BaseGeometry.area() takes 1 positional argument but 3 were given
+[TypeError] area() takes 1 positional argument but 3 were given
 
 '''

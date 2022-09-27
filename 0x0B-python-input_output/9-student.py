@@ -11,8 +11,8 @@ class Student:
             last_name: last name of student
             age: student age
         """
-        self.f_name = first_name
-        self.l_name = last_name
+        self.first_name = first_name
+        self.last_name = last_name
         self.age = age
 
     def to_json(self):

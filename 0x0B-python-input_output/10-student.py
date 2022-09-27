@@ -14,9 +14,8 @@ class Student:
         """retrieves a dictionary representation of a Student instance"""
         if type(attrs) is list and all(type(el) is str for el in attrs):
             attr = {}
-
             for k in attrs:
                 if k in self.__dict__:
-                    attr[k] = self.__dict__[key]
+                    attr[k] = self.__dict__[k]
             return attr
         return self.__dict__

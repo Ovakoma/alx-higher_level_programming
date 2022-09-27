@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """module contains function that returns description with the
 simple data structure."""
-import json
 
 
 def class_to_json(obj):

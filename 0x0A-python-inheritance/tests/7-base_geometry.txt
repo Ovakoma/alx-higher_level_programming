@@ -25,12 +25,7 @@ True
 >>> b.integer_validator(0x666f6f, 278)
 >>> b.integer_validator([0x666f6f], 278)
 
->>> try:
-...	b = BaseGeometry()
-...	b.area()
-... except Exception as e:
-...	print('[{}] {}'.format(e.__class.__.__name__, e.args[0]))
-[TypeError] area() is not implemented
+
 >>> try:
 ...	b = BaseGeometry()
 ...	b.area(2)
@@ -39,7 +34,7 @@ True
 [TypeError] area() takes 1 positional argument but 2 were given
 >>> try:
 ...	b = BaseGeometry()
-...	b.area(g)
+...	b.area(b)
 ... except Exception as e:
 ...	print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
 [TypeError] area() takes 1 positional argument but 2 were given
@@ -54,12 +49,12 @@ True
 ...     b.area('size', None)
 ... except Exception as e:
 ...     print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
-[TypeError] size must be an integer
+[TypeError] area() takes 1 positional argument but 3 were given
 >>> try:
 ...	b = BaseGeometry()
 ...     b.area('foo', True)
 ... except Exception as e:
 ...     print('[{}] {}'.format(e.__class__.__name__, e.args[0]))
-[TypeError] foo must be an integer
+[TypeError] area() takes 1 positional argument but 3 were given
 
 '''

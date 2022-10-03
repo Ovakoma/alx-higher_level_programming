@@ -7,8 +7,10 @@ import csv
 
 class Base:
     """this class serves as the 'base' of all other classes."""
+    
     __nb_objects = 0
     """private class attribute."""
+    
     def __init__(self, id=None):
         """instantiation of class constructor with instance attr.
         Arg:
@@ -16,8 +18,9 @@ class Base:
         """
         if id is not None:
             self.id = id
-        Base.__nb_objects += 1
-        self.id = Base.__nb_objects
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -78,9 +81,9 @@ class Base:
             return []
 
     @staticmethod
-    def buildext(cls):
+    def buildext(c):
         """builds the extention for csv based on class."""
-        if cls.__name__ = "Rectangle":
+        if c.__name__ == "Rectangle":
             return ["id", "width", "height", "x", "y"]
         return ["id", "size", "x", "y"]
 
@@ -99,7 +102,7 @@ class Base:
                 writer.writerow(obj.to_dictionary())
 
     @classmethod
-    def def load_from_file_csv(cls):
+    def load_from_file_csv(cls):
         """deserializes in CSV."""
         filename = cls.__name__ + ".csv"
         try:

@@ -3,7 +3,7 @@
 from models.rectangle import Rectangle
 
 
-class Square:
+class Square(Rectangle):
     """class inherits from Rectangle."""
     def __init__(self, size, x=0, y=0, id=None):
         """class constructor with public instances.
@@ -47,12 +47,14 @@ class Square:
             setattr(self, k, v)
         if type(args) is None or len(args) == 0 and type(kwargs) is dict:
             for k, v in kwargs.items():
-                setattr(self, k, v) if k in attr
+                if k in attr:
+                    setattr(self, k, v)
 
     def to_dictionary(self):
         """returns the dictionary representation of a Square."""
-        return {'id': self.id
-                'size': self.size
-                'x': self.x
+        return {
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
                 'y': self.y
-                }
+        }

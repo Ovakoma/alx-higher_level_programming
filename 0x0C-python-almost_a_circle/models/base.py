@@ -39,9 +39,12 @@ class Base:
             list_objs: list of instances which inherits of Base
         """
         filename = cls.__name__ + ".json"
-        obj = to_json_string(list_objs)
-        with open(filename) as jf:
-            jf.write(obj)
+        with open(filename, 'w', encoding='utf-8') as jf:
+            if list_objs is None:
+                jf.write("[]")
+            else:
+                dict_list = [obj.to_dictionary() for obj in list_objs]
+                jf.write(Base.to_json_string(dict_list))
 
     @staticmethod
     def from_json_string(json_string):
@@ -49,7 +52,7 @@ class Base:
         Arg:
             json_string: string representing a list of dictionaries
         """
-        if json_string is None or len(json_string) == 0:
+        if not json_string:
             return []
         return json.loads(json_string)
 
@@ -65,7 +68,7 @@ class Base:
                 'Square': (2, 4, 5, 61)
         }
         if cls.__name__ in dummy.keys():
-            dummy = cls(*dummy[cls.__name])
+            dummy = cls(*dummy[cls.__name__])
             dummy.update(**dictionary)
             return dummy
 
@@ -75,8 +78,8 @@ class Base:
         filename = cls.__name__ + ".json"
         try:
             with open(filename, encoding='utf-8') as file:
-                list_inst = cls.from_json_string(file.read)
-                return [cls.create(**d) for k in list_inst]
+                list_inst = cls.from_json_string(file.read())
+                return [cls.create(**k) for k in list_inst]
         except IOError:
             return []
 

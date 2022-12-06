@@ -5,6 +5,7 @@ def main(argv):
         added += int(argv[i])
     print('{}'.format(added))
 
+
 if __name__ == "__main__":
     import sys
     main(sys.argv)

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-print_matrix_integer = __import__('6-print_matrix_integer').print_matrix_integer
+print_matrix_int = __import__('6-print_matrix_integer').print_matrix_integer
 
 matrix = [
     [1, 2, 3],
@@ -7,6 +7,6 @@ matrix = [
     [7, 8, 9]
 ]
 
-print_matrix_integer(matrix)
+print_matrix_int(matrix)
 print("--")
-print_matrix_integer()
+print_matrix_int()

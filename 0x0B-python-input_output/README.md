@@ -1,1 +1,1 @@
-I/O(Input and Output) in Python
+Input and Output(I/O) in Python

@@ -7,10 +7,10 @@ import csv
 
 class Base:
     """this class serves as the 'base' of all other classes."""
-    
+
     __nb_objects = 0
     """private class attribute."""
-    
+
     def __init__(self, id=None):
         """instantiation of class constructor with instance attr.
         Arg:
@@ -112,7 +112,7 @@ class Base:
             with open(filename, encoding='utf-8') as f:
                 reader = csv.DictReader(f, fieldnames=cls.buildext(cls))
                 list_dict = [dict((k, int(v)) for k, v in d.items())
-                            for d in reader]
+                             for d in reader]
                 return [cls.create(**d) for d in list_dict]
         except IOError:
             return []

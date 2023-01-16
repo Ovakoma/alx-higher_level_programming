@@ -30,7 +30,7 @@ class TestBaseInstances(unittest.TestCase):
     def test_increament(self):
         """test that test objs without arg increase by 1."""
         self.assertEqual(self.shape_2.id - self.shape.id,
-                        self.shape_4.id - self.shape_3.id)
+                         self.shape_4.id - self.shape_3.id)
         self.assertTrue((self.shape_2.id - self.shape.id) == 1)
 
     def test_multiple_arg(self):
@@ -74,11 +74,11 @@ class TestBaseToStr(unittest.TestCase):
                         [r.to_dictionary()])))
         self.assertEqual(Base.to_json_string([{}]), '[{}]')
         self.assertEqual(Base.to_json_string([{"len": 2}]),
-                        '[{"len": 2}]')
+                         '[{"len": 2}]')
 
     def test_from_json_string(self):
         list_input = [
-            {'id': 89, 'width': 10, 'height': 4}, 
+            {'id': 89, 'width': 10, 'height': 4},
             {'id': 7, 'width': 1, 'height': 7}
         ]
         json_list_input = Rectangle.to_json_string(list_input)
@@ -93,6 +93,7 @@ class TestBaseToStr(unittest.TestCase):
             Base.from_json_string()
         with self.assertRaises(TypeError):
             Base.from_json_string([], 6)
+
 
 class TestRectangleInstancesandAttributes(unittest.TestCase):
     """class contains test suite for Rectangle instances and attributes."""
@@ -158,9 +159,10 @@ class TestRectangleInstancesandAttributes(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle(2, 4, y=-1)
 
+
 class TestPolygonMethods(unittest.TestCase):
     """class contains test suite for Rectangle methods"""
-    
+
     @classmethod
     def tearDown(self):
         """delete all created files."""
@@ -250,10 +252,11 @@ class TestPolygonMethods(unittest.TestCase):
 
         self.r1.update()
         self.assertEqual(self.r1.to_dictionary(),
-        {"id": 23, "width": 2, "height": 3, "x": 4, "y": 0})
+                         {"id": 23, "width": 2, "height": 3, "x": 4, "y": 0})
         self.r1.update(89)
         self.assertEqual(self.r1.to_dictionary(),
-        {"id": 89, "width": 2, "height": 3, "x": 4, "y": 0})
+                         {"id": 89, "width": 2, "height": 3, "x": 4, "y": 0})
+
 
 class TestBase_save_to_file_csv(unittest.TestCase):
     """Unittests for testing save_to_file_csv method of Base class."""
